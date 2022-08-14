@@ -1,4 +1,5 @@
 # projectb
+프로젝트B팀 화이팅~~~~~!
 ### 프로젝트B팀 화이팅~~~~~!
 
 
@@ -14,4 +15,6 @@ $ python manage.py startapp main
 setting.py 에 apps 에 'main' 추가
 allowed host 에 * 추가
 언어 시간 변경
+
 $ python manage.py migrate
+
