@@ -32,3 +32,9 @@ $ pip install django-rest-framework
 $ pip install django-cors-headers
 
 ## react 연동
+=======
+언어 시간 변경
+
+$ python manage.py migrate
+
+>>>>>>> d83cb73cba36b952ff13d9c07f73450f69a77976
