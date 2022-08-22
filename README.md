@@ -18,6 +18,7 @@ $ $ cd projectb/
 $ python manage.py startapp main
 setting.py 에 apps 에 'main' 추가
 allowed host 에 * 추가
+<<<<<<< HEAD
 
 ## 시간지역셋팅
 settings.py - LANGUAGE_CODE - ko_kr
