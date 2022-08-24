@@ -25,17 +25,17 @@ settings.py - LANGUAGE_CODE - ko_kr
 settings.py - TIME_ZONE = 'Asia/Seoul'
 
 ## model변동에, 데이터베이스 연동에 해야하는것들
-& python manage.py makemigrations
-$ python manage.py migrate
+$ python manage.py makemigrations  -> app의 모델 변경 사항을 체크
+$ python manage.py migrate -> 변경사항을 DB에 반영
 
  React로 데이터 전달을 위한 DRF(Django REST Framework) API 설치
 $ pip install django-rest-framework
 $ pip install django-cors-headers
 
+requirements
+$ pip freeze > requirements.txt
+$ pip install -r requirements.txt
+
+
 ## react 연동
-=======
-언어 시간 변경
-
-$ python manage.py migrate
-
->>>>>>> d83cb73cba36b952ff13d9c07f73450f69a77976
+https://choco-life.tistory.com/42 에서 참고
