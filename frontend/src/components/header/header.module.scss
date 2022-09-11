@@ -1,0 +1,19 @@
+.header {
+  border: 1px solid red;
+
+  .selectWrap {
+    border: 1px solid blue;
+
+    select {
+      border: 1px solid yellow;
+    }
+  }
+
+  .searchWrap {
+    border: 1px solid blue;
+
+    input {
+      border: 1px solid yellow;
+    }
+  }
+}
