@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import ListReview, DetailReview
+from .views import ListArticle, DetailArticle
 
 urlpatterns = [
-    path('', ListReview.as_view()),
-    path('<int:pk>/', DetailReview.as_view()),
+    path('', ListArticle.as_view()),
+    path('<int:pk>/', DetailArticle.as_view()),
 ]

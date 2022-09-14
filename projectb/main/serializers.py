@@ -1,13 +1,17 @@
 # backend/post/serializers.py
 from rest_framework import serializers
-from .models import Review
+from .models import Article
 
-class ReviewSerializer(serializers.ModelSerializer):
+class AriticleSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Review
+        model = Article
         fields = (
             'id',
             'title',
             'content',
+            'hits',
+            'shares',
+            'image',
+
         )
      
