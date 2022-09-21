@@ -1,9 +1,15 @@
+/* eslint-disable react/destructuring-assignment */
 import Header from 'components/header';
 
-const GNB = () => {
+interface GNBProps {
+  setSelect: any;
+  setFind: any;
+}
+
+const GNB = ({ setSelect, setFind }: GNBProps) => {
   return (
     <div>
-      <Header />
+      <Header setSelect={setSelect} setFind={setFind} />
     </div>
   );
 };
