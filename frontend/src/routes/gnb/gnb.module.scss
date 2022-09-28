@@ -16,7 +16,6 @@ header {
     justify-content: space-between;
   }
 
-  // 로고 영역
   .leftWrap {
     img {
       width: 96px;
@@ -24,7 +23,6 @@ header {
     }
   }
 
-  // 검색 영역
   .rightWrap {
     display: flex;
     align-items: flex-end;
@@ -58,15 +56,13 @@ header {
   }
 
   .searchWrap {
-    min-width: 400px;
+    width: 400px;
     position: relative;
     display: flex;
     align-items: center;
-    width: 100%;
     height: 45px;
     margin: 1px auto 0;
     font-size: 15px;
-    line-height: 20px;
     color: #4e5968;
     background-color: #fff;
     padding: 0 0 0 20px;
@@ -89,7 +85,6 @@ header {
       background: none;
       outline: none;
       padding: 0 20px;
-      line-height: 45px;
     }
   }
 }

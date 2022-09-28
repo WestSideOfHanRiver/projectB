@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */ // 이건 뭘까
 import { useEffect, useState } from 'react';
 import Card from 'components/card';
 
@@ -42,10 +41,8 @@ interface Props {
 const Main = ({ select, find }: Props) => {
   const [dummyCards, setDummyCards] = useState<ICard[]>([...DUMMY_CARDS]);
 
-  // 정렬
   dummyCards.sort((a: ICard, b: ICard) => b[select] - a[select]);
 
-  // 검색
   useEffect(() => {
     if (find !== '') {
       const result = DUMMY_CARDS.filter((item) => item.title.toLowerCase().includes(find));
