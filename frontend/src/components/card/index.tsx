@@ -13,14 +13,20 @@ const Card = ({ card }: IProps) => {
 
   return (
     <div className={styles.card}>
-      <div className={styles.rowFlex}>
-        <ShareIcon />
-        <p>{shared}</p>
-        <VisibilityIcon />
-        <p>{views}</p>
+      <div className={`${styles.rowFlex} ${styles.spaceBetween}`}>
+        <div className={styles.flexStart}>
+          <ShareIcon />
+          <p>{shared}</p>
+        </div>
+        <div className={styles.felxEnd}>
+          <VisibilityIcon />
+          <p>{views}</p>
+        </div>
       </div>
-      <img src={url} alt='' />
-      <h3>{title}</h3>
+      <div className={styles.cardBox}>
+        <img src={url} alt='' />
+      </div>
+      <h3 className={styles.center}>{title}</h3>
     </div>
   );
 };
