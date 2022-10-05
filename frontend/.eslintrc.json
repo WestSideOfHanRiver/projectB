@@ -82,6 +82,8 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
-  }
+    ],
+    "prettier/prettier": ["error", { "enndOfLine": "auto" }]
+  },
+  "plugins": ["prettier"]
 }
