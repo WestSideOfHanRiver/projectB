@@ -24,4 +24,4 @@ https://choco-life.tistory.com/42 에서 참고
 
 ## 서버실행
 1. (manage.py 경로에서)python manage.py runserver
-2. (frontent 경로에서)yarn start
+2. (frontent 경로에서)yarn start!
