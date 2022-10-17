@@ -6,4 +6,6 @@ class Article(models.Model):
     hits = models.PositiveIntegerField(default = 0) # 조회수
     shares = models.PositiveIntegerField(default = 0) # 공유수
     image = models.ImageField(upload_to='images/',blank=True, null=True) # 대문 이미지업로드
+    created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
