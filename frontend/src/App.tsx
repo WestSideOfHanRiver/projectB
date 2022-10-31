@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import Main from 'routes/main';
 import GNB from 'routes/gnb';
+import Result from 'routes/result';
 
 type selectType = 'shared' | 'views';
 const BASE_URL = 'http://127.0.0.1:8000/api/';
@@ -25,6 +26,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Main select={select} find={find} />} />
+          <Route path='result' element={<Result />} />
           <Route path='*' element={<div>Page Not Found 잘생겼다 완석님</div>} />
         </Routes>
       </BrowserRouter>
