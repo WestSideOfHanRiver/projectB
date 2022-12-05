@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from .models import Article
 from .serializers import AriticleSerializer
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
 # class ListArticle(generics.ListCreateAPIView):
 #     queryset = Article.objects.all()
 #     serializer_class = AriticleSerializer
@@ -33,6 +34,7 @@ from django.views.decorators.csrf import csrf_exempt
 #         # queryset.save()
 #         return (HTTPResponse('넘어온 데이터'+score))
 @csrf_exempt
+@api_view(['GET', 'POST'])
 def Result(request):
     if request.method == 'GET':
         # 페이지를 불러올 때
@@ -42,7 +44,7 @@ def Result(request):
     elif request.method == 'POST':
         # 페이지 내에서 POST 발생 시
         print('POST')
-        print(request)
+        print(request.data)
         # username = request.POST['username']
         # password = request.POST['password']
         # re_password = request.POST['re-password']
@@ -51,7 +53,6 @@ def Result(request):
         #     username = username,
         #     password = password
         # )
- 
         # users.save()
  
-        return HttpResponse(request.method)
+        return HttpResponse(request.data)
