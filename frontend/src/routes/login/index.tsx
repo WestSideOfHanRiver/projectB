@@ -3,7 +3,20 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Login = () => {
-  const [inputId, setInputId] = useState('');
+  const [checked, setChecked] = useState(() => {
+    const savedIdData = localStorage.getItem('idData');
+    if (savedIdData === null) {
+      return false;
+    }
+    return JSON.parse(savedIdData).checked;
+  });
+  const [inputId, setInputId] = useState(() => {
+    const savedIdData = localStorage.getItem('idData');
+    if (savedIdData === null) {
+      return '';
+    }
+    return JSON.parse(savedIdData).idData;
+  });
   const [inputPw, setInputPw] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -11,9 +24,7 @@ const Login = () => {
     const inputVal = e.target.value;
     console.log('인풋상태', inputVal);
     setErrorMessage('');
-    if (inputVal.length < 5 || inputVal === '') {
-      setErrorMessage('5글자 이상 입력해야 합니다.');
-    }
+
     console.log(errorMessage);
     return setInputId(inputVal);
   };
@@ -23,6 +34,17 @@ const Login = () => {
   };
 
   // 아이디 저장
+  // const [saveId, setSaveId] = useState(false);
+
+  const handleSaveId: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    setChecked(e.target.checked);
+    if (inputId !== '' && e.target.checked === true) {
+      localStorage.setItem('idData', JSON.stringify({ idData: inputId, checked: true }));
+    }
+    if (e.target.checked === false) {
+      localStorage.removeItem('idData');
+    }
+  };
 
   // login 버튼 클릭 이벤트
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -37,6 +59,8 @@ const Login = () => {
       return;
     }
     console.log('click login');
+
+    const loginFormObj = document.querySelector('.txtWrap>form');
   };
 
   return (
@@ -45,7 +69,7 @@ const Login = () => {
         <div className={styles.txtWrap}>
           <h2>Login</h2>
         </div>
-        <form>
+        <form onSubmit={onSubmit}>
           <div className={styles.inputWrap}>
             <label htmlFor='input_id'>ID</label>
             <input
@@ -79,15 +103,18 @@ const Login = () => {
               required
             />
           </div>
-          <input
-            type='checkbox'
-            name='save_id'
-            // onChange={handleSave} checked={isRemember}
-          />
-          아이디 저장
-          <input type='checkbox' name='keep_login' />
-          로그인 상태 유지
-          <button type='submit' onSubmit={onSubmit} className={styles.btn}>
+          <div>
+            <input type='checkbox' name='save_id' id='save_id' onChange={handleSaveId} checked={checked} />
+            <label htmlFor='save_id'>아이디 저장</label>
+            <input
+              type='checkbox'
+              name='keep_login'
+              id='keep_login'
+              // onChange={handleSave} checked={isRemember}
+            />
+            <label htmlFor='keep_login'>로그인 상태 유지</label>
+          </div>
+          <button type='submit' className={styles.btn}>
             login
           </button>
           {/* <button type='submit' className={styles.btn}>
