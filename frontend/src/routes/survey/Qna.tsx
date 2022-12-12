@@ -49,10 +49,11 @@ const Qna = () => {
     if (qIdx === dummySurveys.length - 1) {
       axios({
         method: 'post',
-        url: 'https://localhost:3000/article/1/scores',
+        url: 'http://127.0.0.1:8000/article/result/',
         data: {
-          name: (document.getElementById('userName') as HTMLInputElement).value,
-          age: (document.getElementById('userAge') as HTMLInputElement).value,
+          // name: 'asdf',
+          age: '23',
+          // scores: JSON.stringify(selectedArr),
           scores: selectedArr,
         },
       });
