@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import Card from 'components/card';
 
+import styles from 'components/card/card.module.scss';
+
 const DUMMY_CARDS = [
   {
     id: 1,
@@ -53,14 +55,11 @@ const Main = ({ select, find }: Props) => {
   }, [find]);
 
   return (
-    <>
-      <h1>Main</h1>
-      <p>Hey ~</p>
-      <p>siwon</p>
+    <div className={styles.container}>
       {dummyCards.map((card: ICard) => (
         <Card key={card.id} card={card} />
       ))}
-    </>
+    </div>
   );
 };
 
