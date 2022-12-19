@@ -46,19 +46,7 @@ const Qna = () => {
     const selectedAnswerIndex = e.currentTarget.value;
     setSelectedArr((prev) => [...prev, selectedAnswerIndex]);
 
-    if (qIdx === dummySurveys.length - 1) {
-      axios({
-        method: 'post',
-        url: 'https://localhost:3000/article/1/scores',
-        data: {
-          name: (document.getElementById('userName') as HTMLInputElement).value,
-          age: (document.getElementById('userAge') as HTMLInputElement).value,
-          scores: selectedArr,
-        },
-      });
-
-      navigator('/result');
-    } else {
+    if (qIdx < dummySurveys.length - 1) {
       setqIdx((prevIdx) => prevIdx + 1);
     }
   };
@@ -68,6 +56,22 @@ const Qna = () => {
       setqIdx((prevIdx) => prevIdx - 1);
     }
   };
+
+  useEffect(() => {
+    if (selectedArr.length === dummySurveys.length) {
+      axios({
+        method: 'post',
+        url: 'http://127.0.0.1:8000/article/result/',
+        data: {
+          // name: 'asdf',
+          age: '23',
+          scores: selectedArr,
+        },
+      });
+
+      navigator('/result');
+    }
+  }, [selectedArr]);
 
   return (
     <div className={styles.qnaWrap}>
