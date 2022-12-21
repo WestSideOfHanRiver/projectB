@@ -15,9 +15,6 @@ const Survey = () => {
 
   return (
     <div className={styles.container}>
-      <input type='hidden' id='userName' value='사람이름' />
-      <input type='hidden' id='userAge' value='' />
-
       {Idx === 0 && <Intro handleClick={handleClick} />}
       {Idx === 1 && <Info handleClick={handleClick} />}
       {Idx === 2 && <Qna />}

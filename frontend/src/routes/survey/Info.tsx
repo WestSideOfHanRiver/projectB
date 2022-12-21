@@ -10,15 +10,13 @@ const Info = ({ handleClick }: Props) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // 정규식
-    // alert('제출');
-    (document.getElementById('userName') as HTMLInputElement).value = (
-      document.getElementById('name') as HTMLInputElement
-    ).value;
+    // (document.getElementById('userName') as HTMLInputElement).value = (
+    //   document.getElementById('name') as HTMLInputElement
+    // ).value;
 
-    (document.getElementById('userAge') as HTMLInputElement).value = (
-      document.getElementById('age') as HTMLInputElement
-    ).value;
+    // (document.getElementById('userAge') as HTMLInputElement).value = (
+    //   document.getElementById('age') as HTMLInputElement
+    // ).value;
 
     handleClick();
   };
