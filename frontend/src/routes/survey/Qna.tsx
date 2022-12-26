@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import styles from './survey.module.scss';
+import { useRecoilValue } from 'recoil';
+import { userState } from 'atoms/userAtom';
 
 const dummySurveys = [
   {
@@ -47,16 +49,10 @@ export interface IAnswer {
   total: number;
 }
 
-export interface IScore {
-  id: number;
-  text: string;
-  score: number;
-  total: number;
-}
-
 const Qna = () => {
   const [qIdx, setqIdx] = useState(0);
   const [selectedArr, setSelectedArr] = useState<string[]>([]);
+  const user = useRecoilValue(userState);
 
   const navigator = useNavigate();
 
@@ -83,7 +79,7 @@ const Qna = () => {
         method: 'post',
         url: 'http://127.0.0.1:8000/article/result/',
         data: {
-          score_data: [sumScore, 'test', '00'],
+          score_data: [sumScore, user.name, user.age],
         },
       });
 
