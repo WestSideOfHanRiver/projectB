@@ -1,7 +1,12 @@
 from django.contrib import admin
 
-from .models import Article
+from .models import Article, Score
 
-class ArticlesAdmin(admin.ModelAdmin):
-    list_display = ['id','title','image','scores','created_at','updated_at']
-admin.site.register(Article,ArticlesAdmin)
+admin.site.register(Article)
+admin.site.register(Score)
+# class ArticlesAdmin(admin.ModelAdmin):
+#     pass
+# admin.site.register(Article,ArticlesAdmin)
+class ScoreAdmin(admin.ModelAdmin):
+    list_display = ("survey1",)
+# admin.site.register(Score,ScoreAdmin)
