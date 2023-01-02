@@ -7,7 +7,7 @@ import GNB from 'routes/gnb';
 import Survey from 'routes/survey';
 import Chart from 'routes/resultDetail';
 import Result from 'routes/result';
-
+import Info from 'routes/info';
 
 type selectType = 'shared' | 'views';
 
@@ -35,6 +35,7 @@ const App = () => {
           <Route path='survey' element={<Survey />} />
           <Route path='result' element={<Result />} />
           <Route path='chart' element={<Chart />} />
+          <Route path='info' element={<Info />} />
           <Route path='*' element={<div>Page Not Found 잘생겼다 완석님</div>} />
         </Routes>
       </BrowserRouter>
