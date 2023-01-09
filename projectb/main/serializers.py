@@ -12,8 +12,5 @@ class AriticleSerializer(serializers.ModelSerializer):
             'hits',
             'shares',
             'image',
-            'scores',
-    
-
         )
      

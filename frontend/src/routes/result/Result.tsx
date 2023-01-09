@@ -6,7 +6,8 @@ import { AreaChart } from './chart';
 
 const Result = () => {
   const handleClick = () => {
-    axios.post('http://127.0.0.1:8000/article/result/', { scores: [1, 2, 3] });
+    // axios.post('http://127.0.0.1:8000/article/result/', { scores: [1, 2, 3] });
+    axios.post('http://127.0.0.1:8000/article/survey/1/', { scores: [70, '조완석', 30] });
   };
   return (
     <>
